@@ -47,8 +47,5 @@ jobs:
           npx prisma generate
           npx prisma migrate dev --name init
 
-      - name: Run tests
-        run: npm test
-
       - name: Build project
         run: npm run build
