@@ -22,14 +22,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Failed to create todo' }, { status: 500 });
   }
 }
-
-// Default export to handle other HTTP methods
-export default function handler(req: NextRequest) {
-  if (req.method === 'GET') {
-    return GET();
-  } else if (req.method === 'POST') {
-    return POST(req);
-  } else {
-    return NextResponse.json({ error: `Method ${req.method} Not Allowed` }, { status: 405 });
-  }
-}
